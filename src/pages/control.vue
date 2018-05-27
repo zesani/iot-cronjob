@@ -30,13 +30,13 @@
         <i class="fas fa-microphone"></i>&nbsp;
         PUSH TO TALK
       </span>
-      <span v-else class="icon">
-        <i class="fas fa-ellipsis-h"></i>s
-      </span>
+      <p v-if="record" class="icon">
+        <i class="fas fa-ellipsis-h"></i>
+      </p>
     </button>
-    <button v-else class="button is-primary push-button is-large" @touchstart="startRecording" @mouseup="stopRecording">
-      <span v-if="!record">PUSH TO TALK</span>
-      <span v-else>...</span>
+    <button v-if="isTouch" class="button is-primary push-button is-large" @touchstart="startRecording" @mouseup="stopRecording">
+      <span v-if="!record"><i class="fas fa-microphone"></i>&nbsp;PUSH TO TALK</span>
+      <span v-if="record">...</span>
     </button>
     <div :class="`modal ${isModal ? 'is-active': ''}`">
       <div class="modal-background"></div>
