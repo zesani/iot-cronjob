@@ -36,7 +36,9 @@
     </button>
     <button v-if="isTouch" class="button is-primary push-button is-large" @touchstart="startRecording" @mouseup="stopRecording">
       <span v-if="!record"><i class="fas fa-microphone"></i>&nbsp;PUSH TO TALK</span>
-      <span v-if="record">...</span>
+      <p v-if="record" class="icon">
+        <i class="fas fa-ellipsis-h"></i>
+      </p>
     </button>
     <div :class="`modal ${isModal ? 'is-active': ''}`">
       <div class="modal-background"></div>
@@ -188,6 +190,7 @@ export default {
       // console.log('Now I am connected with netpie...')
       microgear.subscribe('/D1/nodemcu_esp8266')
       microgear.subscribe('/D2/nodemcu_esp8266')
+      microgear.subscribe('/D3/nodemcu_esp8266')
       microgear.subscribe('/D4/nodemcu_esp8266')
       microgear.subscribe('/D5/nodemcu_esp8266')
       microgear.subscribe('/D6/nodemcu_esp8266')
