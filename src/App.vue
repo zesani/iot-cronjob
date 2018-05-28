@@ -25,6 +25,7 @@ var firebaseApp = firebase.initializeApp({
   storageBucket: 'iot-cronjob.appspot.com',
   messagingSenderId: '623382483463'
 })
+console.log(process.env)
 var db = firebaseApp.database()
 export default {
   data () {

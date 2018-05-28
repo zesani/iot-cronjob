@@ -6,7 +6,7 @@ import router from './router'
 import Buefy from 'buefy'
 
 import VueFire from 'vuefire'
-
+require('dotenv').config()
 Vue.use(Buefy)
 Vue.use(VueFire)
 Vue.config.productionTip = false
